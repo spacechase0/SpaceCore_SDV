@@ -4,13 +4,13 @@
   "Version": {
     "MajorVersion": 1,
     "MinorVersion": 1,
-    "PatchVersion": 0,
+    "PatchVersion": 2,
     "Build": ""
   },
   "Description": "...",
   "UniqueID": "spacechase0.SpaceCore",
   "PerSaveConfigs": false,
   "EntryDll": "SpaceCore.dll",
-  "MinimumApiVersion": "1.15",
+  "MinimumApiVersion": "2.5",
   "UpdateKeys": [ "Nexus:1348" ]
 }
