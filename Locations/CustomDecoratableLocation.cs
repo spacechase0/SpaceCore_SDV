@@ -7,15 +7,26 @@ using System.Threading.Tasks;
 
 namespace SpaceCore.Locations
 {
+    
+    public static class OverrideSetWallpaper
+    {
+        
+    }
+
     public abstract class CustomDecoratableLocation : DecoratableLocation
     {
         public new abstract List<Microsoft.Xna.Framework.Rectangle> getWalls();
         public new abstract List<Microsoft.Xna.Framework.Rectangle> getFloors();
 
         public CustomDecoratableLocation() : base() { }
-        public CustomDecoratableLocation(xTile.Map m, string name) : base(m, name) { }
 
-        public override void setWallpaper(int which, int whichRoom = -1, bool persist = false)
+        // [DefenTheNation]
+        // Warning: The base constructor currently does nothing
+        // What did it do in previous iterations? How was the Map m integrated
+        // into the location?
+        public CustomDecoratableLocation(xTile.Map m, string name) : base("", name) { }
+
+        public new void setWallpaper(int which, int whichRoom = -1, bool persist = false)
         {
             List<Microsoft.Xna.Framework.Rectangle> walls = getWalls();
             if (persist)
@@ -67,7 +78,7 @@ namespace SpaceCore.Locations
             }
         }
 
-        public override void setFloor(int which, int whichRoom = -1, bool persist = false)
+        public new void setFloor(int which, int whichRoom = -1, bool persist = false)
         {
             List<Microsoft.Xna.Framework.Rectangle> floors = getFloors();
             if (persist)
